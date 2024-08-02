@@ -14,6 +14,7 @@
 		8FF317902C5D0C380038531F /* InAppBrowser_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF3178F2C5D0C380038531F /* InAppBrowser_SwiftUITests.swift */; };
 		8FF3179A2C5D0C380038531F /* InAppBrowser_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF317992C5D0C380038531F /* InAppBrowser_SwiftUIUITests.swift */; };
 		8FF3179C2C5D0C380038531F /* InAppBrowser_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF3179B2C5D0C380038531F /* InAppBrowser_SwiftUIUITestsLaunchTests.swift */; };
+		8FF317A92C5D0C8F0038531F /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF317A82C5D0C8F0038531F /* WebViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		8FF317952C5D0C380038531F /* InAppBrowser-SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InAppBrowser-SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF317992C5D0C380038531F /* InAppBrowser_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppBrowser_SwiftUIUITests.swift; sourceTree = "<group>"; };
 		8FF3179B2C5D0C380038531F /* InAppBrowser_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppBrowser_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8FF317A82C5D0C8F0038531F /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				8FF3177E2C5D0C360038531F /* InAppBrowser_SwiftUIApp.swift */,
 				8FF317802C5D0C360038531F /* ContentView.swift */,
+				8FF317A82C5D0C8F0038531F /* WebViewWrapper.swift */,
 				8FF317822C5D0C380038531F /* Assets.xcassets */,
 				8FF317842C5D0C380038531F /* Preview Content */,
 			);
@@ -259,6 +262,7 @@
 			files = (
 				8FF317812C5D0C360038531F /* ContentView.swift in Sources */,
 				8FF3177F2C5D0C360038531F /* InAppBrowser_SwiftUIApp.swift in Sources */,
+				8FF317A92C5D0C8F0038531F /* WebViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
