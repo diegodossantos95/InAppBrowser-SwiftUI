@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        WebViewWrapper(url: URL(string: "https://medium.com/@diegodossantos1")!)
+        WebViewWrapper(url: URL(string: "https://medium.com/@diegodossantos1")!, viewModel: WebViewModel())
     }
 }
 

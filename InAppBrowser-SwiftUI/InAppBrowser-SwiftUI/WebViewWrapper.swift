@@ -10,6 +10,7 @@ import WebKit
 
 struct WebViewWrapper: UIViewRepresentable {
     var url: URL
+    @ObservedObject var viewModel: WebViewModel
 
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
@@ -22,13 +23,14 @@ struct WebViewWrapper: UIViewRepresentable {
     func updateUIView(_ uiView: WKWebView, context: Context) { }
 
     func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(viewModel: viewModel)
     }
 }
 
 extension WebViewWrapper {
     class Coordinator: NSObject, WKNavigationDelegate {
 
+        @ObservedObject private var viewModel: WebViewModel
         private var loadingObserver: NSKeyValueObservation?
         private var loadingProgressObserver: NSKeyValueObservation?
         private var goBackObserver: NSKeyValueObservation?
@@ -39,6 +41,10 @@ extension WebViewWrapper {
             didSet {
                 webView?.navigationDelegate = self
             }
+        }
+
+        init(viewModel: WebViewModel) {
+            self.viewModel = viewModel
         }
 
         func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
@@ -54,24 +60,24 @@ extension WebViewWrapper {
         }
 
         private func setObservers() {
-            loadingObserver = webView?.observe(\.isLoading) { webView, _ in
-                print("isLoading: \(webView.isLoading)")
+            loadingObserver = webView?.observe(\.isLoading) { [weak self] webView, _ in
+                self?.viewModel.isLoading = webView.isLoading
             }
 
-            loadingProgressObserver = webView?.observe(\.estimatedProgress)  { webView, _ in
-                print("estimatedProgress: \(Float(webView.estimatedProgress))")
+            loadingProgressObserver = webView?.observe(\.estimatedProgress)  { [weak self] webView, _ in
+                self?.viewModel.loadingProgress = Float(webView.estimatedProgress)
             }
 
-            goBackObserver = webView?.observe(\.canGoBack) { webView, _ in
-                print("canGoBack: \(webView.canGoBack)")
+            goBackObserver = webView?.observe(\.canGoBack) { [weak self] webView, _ in
+                self?.viewModel.canGoBack = webView.canGoBack
             }
 
-            goForwardObserver = webView?.observe(\.canGoForward) { webView, _ in
-                print("canGoForward: \(webView.canGoForward)")
+            goForwardObserver = webView?.observe(\.canGoForward) { [weak self] webView, _ in
+                self?.viewModel.canGoForward = webView.canGoForward
             }
 
-            pageTitleObserver = webView?.observe(\.title) { webView, _ in
-                print("title: \(webView.title ?? "")")
+            pageTitleObserver = webView?.observe(\.title) { [weak self] webView, _ in
+                self?.viewModel.title = webView.title ?? ""
             }
         }
 
