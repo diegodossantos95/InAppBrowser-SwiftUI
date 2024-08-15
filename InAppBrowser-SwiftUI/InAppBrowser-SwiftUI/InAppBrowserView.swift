@@ -18,52 +18,54 @@ struct InAppBrowserView: View {
     var url: URL
 
     var body: some View {
-        VStack {
+        ZStack(alignment: .top) {
+            VStack(spacing: 0) {
+                WebViewWrapper(url: url, viewModel: viewModel)
+
+                Divider()
+
+                HStack {
+                    Button {
+                        viewModel.goBack()
+                    } label: {
+                        Image(systemName: "chevron.backward")
+                    }
+                    .disabled(!viewModel.canGoBack)
+
+                    Spacer()
+
+                    Button {
+                        viewModel.goForward()
+                    } label: {
+                        Image(systemName: "chevron.forward")
+                    }
+                    .disabled(!viewModel.canGoForward)
+
+                    Spacer()
+
+                    Button {
+                        viewModel.openInExternalBrowser()
+                    } label: {
+                        Image(systemName: "safari")
+                    }
+
+                    Spacer()
+
+                    Button {
+                        viewModel.reload()
+                    } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                }
+                .padding(.horizontal, 12)
+                .frame(height: 56)
+            }
+
             if viewModel.isLoading {
                 ProgressView(value: viewModel.loadingProgress)
                     .progressViewStyle(LinearProgressViewStyle())
                     .frame(height: 1)
             }
-
-            WebViewWrapper(url: url, viewModel: viewModel)
-
-            Divider()
-
-            HStack {
-                Button {
-                    viewModel.goBack()
-                } label: {
-                    Image(systemName: "chevron.backward")
-                }
-                .disabled(!viewModel.canGoBack)
-
-                Spacer()
-
-                Button {
-                    viewModel.goForward()
-                } label: {
-                    Image(systemName: "chevron.forward")
-                }
-                .disabled(!viewModel.canGoForward)
-
-                Spacer()
-
-                Button {
-                    viewModel.openInExternalBrowser()
-                } label: {
-                    Image(systemName: "safari")
-                }
-
-                Spacer()
-
-                Button {
-                    viewModel.reload()
-                } label: {
-                    Image(systemName: "arrow.clockwise")
-                }
-            }
-            .padding(.horizontal, 12)
-            .frame(height: 56)
         }
         .navigationBarTitle(viewModel.title)
     }

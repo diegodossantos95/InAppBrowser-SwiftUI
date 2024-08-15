@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @State private var showingPopover = false
+
     var body: some View {
-        WebViewWrapper(url: URL(string: "https://medium.com/@diegodossantos1")!, viewModel: WebViewModel())
+        Button("Show In-App Browser") {
+            showingPopover = true
+        }
+        .popover(isPresented: $showingPopover) {
+            NavigationView {
+                InAppBrowserView(url: URL(string: "https://medium.com/@diegodossantos1")!)
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+        }
     }
 }
 
