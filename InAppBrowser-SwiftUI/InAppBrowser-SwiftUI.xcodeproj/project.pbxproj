@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8FE249E62C65768900B23D20 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE249E52C65768900B23D20 /* WebViewModel.swift */; };
+		8FE249E82C657C6100B23D20 /* InAppBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE249E72C657C6100B23D20 /* InAppBrowserView.swift */; };
 		8FF3177F2C5D0C360038531F /* InAppBrowser_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF3177E2C5D0C360038531F /* InAppBrowser_SwiftUIApp.swift */; };
 		8FF317812C5D0C360038531F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF317802C5D0C360038531F /* ContentView.swift */; };
 		8FF317832C5D0C380038531F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF317822C5D0C380038531F /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		8FE249E52C65768900B23D20 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		8FE249E72C657C6100B23D20 /* InAppBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppBrowserView.swift; sourceTree = "<group>"; };
 		8FF3177B2C5D0C360038531F /* InAppBrowser-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InAppBrowser-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF3177E2C5D0C360038531F /* InAppBrowser_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppBrowser_SwiftUIApp.swift; sourceTree = "<group>"; };
 		8FF317802C5D0C360038531F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,9 +103,10 @@
 				8FF3177E2C5D0C360038531F /* InAppBrowser_SwiftUIApp.swift */,
 				8FF317802C5D0C360038531F /* ContentView.swift */,
 				8FF317A82C5D0C8F0038531F /* WebViewWrapper.swift */,
+				8FE249E52C65768900B23D20 /* WebViewModel.swift */,
+				8FE249E72C657C6100B23D20 /* InAppBrowserView.swift */,
 				8FF317822C5D0C380038531F /* Assets.xcassets */,
 				8FF317842C5D0C380038531F /* Preview Content */,
-				8FE249E52C65768900B23D20 /* WebViewModel.swift */,
 			);
 			path = "InAppBrowser-SwiftUI";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FF317812C5D0C360038531F /* ContentView.swift in Sources */,
+				8FE249E82C657C6100B23D20 /* InAppBrowserView.swift in Sources */,
 				8FF3177F2C5D0C360038531F /* InAppBrowser_SwiftUIApp.swift in Sources */,
 				8FF317A92C5D0C8F0038531F /* WebViewWrapper.swift in Sources */,
 				8FE249E62C65768900B23D20 /* WebViewModel.swift in Sources */,
